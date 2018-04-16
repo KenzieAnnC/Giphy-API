@@ -14,9 +14,19 @@ var topics =
     "Blake Anderson", 
     "Jessica Jones"];
 
+    for (var i = 0; i < topics.length; i++) {
+        var buttons = $('<button>'+ topics[i] + '</button>') 
+        buttons.appendTo('#buttons'); 
+    }
+
     $.ajax({
         url: queryURL,
         method: "GET"
+      })
+      .then(function(response){
+          var results = response.data;
+
+          console.log(response);
       })
 
       console.log(queryURL);
