@@ -23,6 +23,7 @@ $(document).ready(function () {
             .appendTo('#buttons');
 
         var character = $('button').attr('data-character');
+    }
         // console.log(character);
 
 
@@ -66,6 +67,6 @@ $(document).ready(function () {
 
         });
 
-    }
+    
 
 });
