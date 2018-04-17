@@ -1,12 +1,12 @@
 $(document).ready(function () {
 
 
-    var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
+    // var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
+    // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
 
     var topics =
-        ["Ron Swanson",
-            "Jared Dunn",
+        ["Jared Dunn",
+            "Ron Swanson",
             "Tina",
             "Cartman",
             "Blake Anderson",
@@ -16,22 +16,25 @@ $(document).ready(function () {
     // this loop (is supposed to) iterate through all the topics an assign the variable character to the data-character value of each button
 
     for (var i = 0; i < topics.length; i++) {
-        $('<button/>', {
+        $('<button>', {
             text: topics[i],
             'data-character': topics[i]
         })
             .appendTo('#buttons');
+            
 
-        var character = $('button').attr('data-character');
+        
     }
-        // console.log(character);
-
+     
+    
 
 
         $(document).on('click', 'button', function() {
+            var character = $(this).attr('data-character');
             var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
-        
+            console.log(character);
+            console.log(queryURL);
 
             $.ajax({
                 url: queryURL,
