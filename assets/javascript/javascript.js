@@ -2,7 +2,7 @@ $(document).ready(function () {
 
 
     var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + api_key;
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
 
     var topics =
         ["Ron Swanson",
@@ -23,7 +23,7 @@ $(document).ready(function () {
         // $('<button data-character>' + topics[i] + '</button>');
 
         .appendTo('#buttons');
-        var characater = $('button').attr('data-character');
+        var character = $('button').attr('data-character');
         // console.log('this ' + characater);
     }
 
@@ -33,7 +33,7 @@ $(document).ready(function () {
     $(document).on('click', 'button', function () {
 
         // var character = $(this).attr('data-character');
-        var characater = $(this).attr('data-character');
+        var character = $(this).attr('data-character');
         console.log(this);
         $.ajax({
             url: queryURL,
