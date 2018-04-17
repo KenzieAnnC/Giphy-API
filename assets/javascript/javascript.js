@@ -20,9 +20,9 @@ $(document).ready(function () {
             text: topics[i],
             'data-character': topics[i]
         })
-        // $('<button data-character>' + topics[i] + '</button>');
+            // $('<button data-character>' + topics[i] + '</button>');
 
-        .appendTo('#buttons');
+            .appendTo('#buttons');
         var character = $('button').attr('data-character');
         // console.log('this ' + characater);
     }
@@ -31,12 +31,12 @@ $(document).ready(function () {
 
 
     $(document).on('click', 'button', function () {
-       
+
         $.ajax({
             url: queryURL,
             method: "GET"
         })
-            .then(function(response) {
+            .then(function (response) {
                 var results = response.data;
 
                 console.log(response.data);
@@ -44,23 +44,23 @@ $(document).ready(function () {
                 // console.log(response);
                 for (var i = 0; i < results.length; i++) {
 
+                    if (results[i].rating !== "r") {
 
+                        var gifDiv = $("<div class= 'item'>");
 
-                    var gifDiv = $("<div class= 'item'>");
+                        var rating = results[i].rating;
 
-                    var rating = results[i].rating;
+                        var p = $('<p>');
 
-                    var p = $('<p>');
+                        var characterImage = $('<img>');
+                        characterImage.attr('src', results[i].images.fixed_height.url);
 
-                    var characterImage = $('<img>');
-                    characterImage.attr('src', results[i].images.fixed_height.url);
+                        gifDiv.append(p);
+                        gifDiv.append(characterImage);
 
-                    gifDiv.append(p);
-                    gifDiv.append(characterImage);
+                        $("#gifs-appear-here").prepend(gifDiv);
 
-                    $("gifs-appear-here").prepend(gifDiv);
-
-
+                    }
 
                 }
             });
