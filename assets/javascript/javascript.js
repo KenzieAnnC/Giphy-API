@@ -31,10 +31,7 @@ $(document).ready(function () {
 
 
     $(document).on('click', 'button', function () {
-
-        // var character = $(this).attr('data-character');
-        var character = $(this).attr('data-character');
-        console.log(this);
+       
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -49,7 +46,7 @@ $(document).ready(function () {
 
 
 
-                    var gifDiv = $("<div class = 'item>");
+                    var gifDiv = $("<div class= 'item'>");
 
                     var rating = results[i].rating;
 
@@ -59,7 +56,7 @@ $(document).ready(function () {
                     characterImage.attr('src', results[i].images.fixed_height.url);
 
                     gifDiv.append(p);
-                    gifDiv.append(chracterImage);
+                    gifDiv.append(characterImage);
 
                     $("gifs-appear-here").prepend(gifDiv);
 
@@ -70,6 +67,6 @@ $(document).ready(function () {
 
     });
 
-    // console.log(queryURL);
+
 
 });
