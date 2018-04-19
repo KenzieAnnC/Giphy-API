@@ -16,6 +16,7 @@ $(document).ready(function () {
     // this loop iterates through all the topics an assigns the variable 'character' to the data-character value of each button
 
     function displayButtons() {
+        $('#buttons').empty();
 
         for (var i = 0; i < topics.length; i++) {
             $('<button>', {
@@ -107,7 +108,7 @@ $(document).ready(function () {
         $('#gif-input').val('');
         
 
-        // displayButtons();
+        displayButtons();
         console.log(topics);
 
     });
