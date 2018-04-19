@@ -23,7 +23,7 @@ $(document).ready(function () {
                 'data-character': topics[i],
                 'data-still': 'fixed_width_still'
             })
-                .addClass('btn btn-success')
+                .addClass('btn btn-dark these')
                 .appendTo('#buttons');
 
         }
@@ -98,12 +98,36 @@ $(document).ready(function () {
         });
     }
 
-    $(document).on('click', 'button', displayGifs);
+    // function addNewButton() {
+
+    $('#add-gif').on('click', function (event) {
+        event.preventDefault();
+        var newGif = $('gif-input').val();
+        if (newGif == "") {
+            return false; 
+        }
+        topics.push(newGif);
+
+        // displayButtons();
+        console.log(topics);
+
+    });
+    // }
+
+    displayButtons();
+
+    $(document).on('click', '.these', displayGifs);
 
     $(document).on('click', '.gif', changeState);
 
+    // $(document).on('click', '#add-gif', addNewButton);
+
+
+
     // });
 
-    displayButtons();
+ 
+
+
 
 });

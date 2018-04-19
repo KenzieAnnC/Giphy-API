@@ -1,11 +1,11 @@
 body {
     background-image: url("../images/background.jpg");
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
    
 }
 
 button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: large;
 }
 
@@ -19,5 +19,9 @@ button {
     text-shadow: 2px 2px 13px rgb(107, 84, 98);
     font-family: 'Shrikhand', cursive;
    
+}
+
+label {
+    font-size: 20px;
 }
 
