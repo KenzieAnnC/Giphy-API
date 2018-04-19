@@ -23,6 +23,7 @@ $(document).ready(function () {
                 'data-character': topics[i],
                 'data-still': 'fixed_width_still'
             })
+                .addClass('btn btn-success')
                 .appendTo('#buttons');
 
         }

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-        <link href="https://fonts.googleapis.com/css?family=Shrikhand|Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Shrikhand|Open+Sans" rel="stylesheet">
 
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -31,17 +31,34 @@
 </head>
 
 <br>
-<div class="main">
-<h2 class="main-header">
-    LETS GET GIPHY WIT' IT!
-</h2>
+<div class="container fluid">
+    <h2 class="main-header">
+        LETS GET GIPHY WIT' IT!
+    </h2>
 </div>
 <br>
 
 <div class="container fluid">
-<div id="buttons"></div>
-<br>
-<div id="gifs-appear-here"></div>
+    <div id="these-gifs">
+        <div class="row">
+            <div id="buttons"></div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col 8">
+                <div id="gifs-appear-here"></div>
+            </div>
+            <div class="col 4">
+                <form>
+                    <div class="form-group">
+                        <label for="addNewGif">Add New Gif!</label>
+                        <input type="gif" class="form-control" id="addNewGif" placeholder="Fun Stuff">
+                        <button type="submit" class="btn btn-primary">Giphy Time!</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <body>

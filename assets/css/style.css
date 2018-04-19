@@ -1,16 +1,15 @@
 body {
     background-image: url("../images/background.jpg");
+    font-family: 'Open Sans', sans-serif;
    
 }
 
-#buttons {
-    font-family: 'Unica One', cursive;
+button {
+    font-family: 'Open Sans', sans-serif;
     font-size: large;
 }
 
-.container {
-    width: 2000px;
-}
+
 
 .main-header {
     text-align: center;
@@ -20,6 +19,5 @@ body {
     text-shadow: 2px 2px 13px rgb(107, 84, 98);
     font-family: 'Shrikhand', cursive;
    
-
-
 }
+
