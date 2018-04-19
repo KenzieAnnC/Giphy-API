@@ -5,15 +5,15 @@ $(document).ready(function () {
     // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
 
     var topics =
-        ["Jared Dunn",
-            "Ron Swanson",
-            "Tina",
+        ["Ron Swanson",
+            "Jared Dunn",
+            "Tina Belcher",
             "Cartman",
             "Blake Anderson",
             "Jessica Jones"];
 
 
-    // this loop (is supposed to) iterate through all the topics an assign the variable character to the data-character value of each button
+    // this loop iterates through all the topics an assigns the variable 'character' to the data-character value of each button
 
     for (var i = 0; i < topics.length; i++) {
         $('<button>', {
@@ -22,19 +22,12 @@ $(document).ready(function () {
         })
             .appendTo('#buttons');
             
-
-        
     }
-     
-    
-
 
         $(document).on('click', 'button', function() {
             var character = $(this).attr('data-character');
             var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
             var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
-            console.log(character);
-            console.log(queryURL);
 
             $.ajax({
                 url: queryURL,
@@ -53,7 +46,7 @@ $(document).ready(function () {
 
                             var rating = results[i].rating;
 
-                            var p = $('<p>');
+                            var p = $("<p>").text("Rating: " + rating);
 
                             var characterImage = $('<img>');
                             characterImage.attr('src', results[i].images.fixed_height.url);
