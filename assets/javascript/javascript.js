@@ -104,6 +104,9 @@ $(document).ready(function () {
     $('#add-gif').on('click', function (event) {
         event.preventDefault();
         var newGif = $('#gif-input').val();
+        if (newGif == ""){
+            return false; // added so user cannot add a blank button
+          }
         topics.push(newGif);
         $('#gif-input').val('');
         
