@@ -15,18 +15,23 @@ $(document).ready(function () {
 
     // this loop iterates through all the topics an assigns the variable 'character' to the data-character value of each button
 
-    for (var i = 0; i < topics.length; i++) {
-        $('<button>', {
-            text: topics[i],
-            'data-character': topics[i],
-            'data-still': 'fixed_width_still'
-        })
-            .appendTo('#buttons');
+    function displayButtons() {
 
+        for (var i = 0; i < topics.length; i++) {
+            $('<button>', {
+                text: topics[i],
+                'data-character': topics[i],
+                'data-still': 'fixed_width_still'
+            })
+                .appendTo('#buttons');
+
+        }
     }
 
-    $(document).on('click', 'button', function () {
-        var still = $(this).attr('data-still');
+    function displayGifs() {
+
+        // $(document).on('click', 'button', function () {
+
         var character = $(this).attr('data-character');
         var api_key = "&api_key=fU89AfoeG5J5kBkCYMh5BiL4ZqQGzBzW&limit=10";
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + character + api_key;
@@ -60,7 +65,7 @@ $(document).ready(function () {
 
                         characterImage.attr('data-animate', results[i].images.fixed_height.url);
 
-                        characterImage.attr('data-state','still');
+                        characterImage.attr('data-state', 'still');
 
                         console.log(characterImage);
 
@@ -69,32 +74,35 @@ $(document).ready(function () {
 
                         $('#gifs-appear-here').prepend(gifDiv);
 
-                        $(document).on('click', '.gif', function () {
-                            var state = $(this).attr('data-state');
-                            console.log(state);
-
-                            if (state === 'still') {
-                                $(this).attr('src', $(this).attr('data-animate'));
-                                $(this).attr('data-state', 'animate');
-                            } else {
-                                $(this).attr('src', $(this).attr('data-still'));
-                                $(this).attr('data-state', 'still');
-                            }
-                        });
-
-
                     }
-
-
 
                 }
 
             });
+    }
 
+    function changeState() {
+        $(document).on('click', '.gif', function () {
 
+            var state = $(this).attr('data-state');
+            console.log(state);
 
-    });
+            if (state === 'still') {
+                $(this).attr('src', $(this).attr('data-animate'));
+                $(this).attr('data-state', 'animate');
+            } else {
+                $(this).attr('src', $(this).attr('data-still'));
+                $(this).attr('data-state', 'still');
+            }
+        });
+    }
 
+    $(document).on('click', 'button', displayGifs);
 
+    $(document).on('click', '.gif', changeState);
+
+    // });
+
+    displayButtons();
 
 });
