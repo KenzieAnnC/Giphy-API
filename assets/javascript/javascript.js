@@ -102,11 +102,10 @@ $(document).ready(function () {
 
     $('#add-gif').on('click', function (event) {
         event.preventDefault();
-        var newGif = $('gif-input').val();
-        if (newGif == "") {
-            return false; 
-        }
+        var newGif = $('#gif-input').val();
         topics.push(newGif);
+        $('#gif-input').val('');
+        
 
         // displayButtons();
         console.log(topics);
