@@ -7,14 +7,14 @@ $(document).ready(function () {
     var topics =
         ["Ron Swanson",
             "Jared Dunn",
+            "Spongebob",
             "Jean-Luc Picard",
             "Tina Belcher",
             "Cartman",
             "Blake Anderson",
             "Jessica Jones",
             "Doctor Who",
-            "William Adama",
-            "Spongebob"];
+            "William Adama"];
 
 
     // this loop iterates through all the topics an assigns the variable 'character' to the data-character value of each button
