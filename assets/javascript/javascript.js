@@ -108,8 +108,10 @@ $(document).ready(function () {
     $('#add-gif').on('click', function (event) {
         event.preventDefault();
         var newGif = $('#gif-input').val();
-        if (newGif == ""){
-            return false; // added so user cannot add a blank button
+        if (newGif == ''){
+            alert('You must have a hero, tell mez!');
+            return false; 
+            
           }
         topics.push(newGif);
         $('#gif-input').val('');
