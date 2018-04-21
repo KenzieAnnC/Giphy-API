@@ -103,7 +103,7 @@ $(document).ready(function () {
         });
     }
 
-    // function addNewButton() {
+ 
 
     $('#add-gif').on('click', function (event) {
         event.preventDefault();
@@ -121,7 +121,7 @@ $(document).ready(function () {
         console.log(topics);
 
     });
-    // }
+  
 
     displayButtons();
 
